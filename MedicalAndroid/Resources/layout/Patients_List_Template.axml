@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Imię i nazwisko:"
+			android:id="@+id/patientNameText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_toLeftOf="@+id/patientName"/>
+		<TextView
+			android:layout_margin="5dp"
+			local:MvxBind="Text Name"
+			android:id="@+id/patientName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"/>
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Pesel:"
+			android:id="@+id/patientPeselText"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/patientNameText"	
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_toLeftOf="@+id/patientPesel"/>
+		<TextView
+			android:layout_margin="5dp"
+			local:MvxBind="Text Pesel"
+			android:id="@+id/patientPesel"
+			android:layout_below="@id/patientNameText"	
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"/>
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Data urodzenia:"
+			android:id="@+id/patientBirthText"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/patientPeselText"	
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_toLeftOf="@+id/patientPesel"/>
+		<TextView
+			android:text=""
+			android:layout_margin="5dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/patientPeselText"
+			android:id="@+id/partientBirth"
+			android:layout_alignParentRight="true"
+			local:MvxBind="Text DateOfBirth"/>
+</RelativeLayout>

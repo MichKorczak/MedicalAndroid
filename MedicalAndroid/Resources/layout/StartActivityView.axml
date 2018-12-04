@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:src="@drawable/clinicimage"
+		android:id="@+id/StartImage"/>
+
+	<Button
+		android:text="Lista pacjentów"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/StartImage"
+		android:id="@+id/PatientListButton" 
+		local:MvxBind="Click PatientsListCommand"/>
+
+	<Button
+		android:text="Lista badań"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/PatientListButton"
+		android:id="@+id/MedicalTestButton" />
+
+	<Button
+		android:text="Nadchodzące badania"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/MedicalTestButton"
+		android:id="@+id/NextMedicalTestButton" />
+
+	<Button
+		android:text="lista lekarzy"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/NextMedicalTestButton"
+		android:id="@+id/DoctorListButton" />
+
+</RelativeLayout>

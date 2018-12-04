@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Typ badania:"
+			android:id="@+id/MedicalTestTypesText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_toLeftOf="@+id/MedicalTestTypes"/>
+		<TextView
+			android:layout_margin="5dp"
+			local:MvxBind="Text MedicalTestTypes"
+			android:id="@+id/MedicalTestTypes"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"/>
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Data:"
+			android:id="@+id/MedicalDateText"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/MedicalTestTypesText"	
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_toLeftOf="@+id/patientPesel"/>
+		<TextView
+			android:layout_margin="5dp"
+			local:MvxBind="Text DateTime"
+			android:id="@+id/MedicalDate"
+			android:layout_below="@id/MedicalTestTypesText"	
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

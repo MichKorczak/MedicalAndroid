@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Imię i nazwisko:"
+			android:id="@+id/patientNameText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_toLeftOf="@+id/patientName"
+			android:textStyle="bold"/>
+		<TextView
+			android:layout_margin="5dp"
+			local:MvxBind="Text ChosenOne.Name"
+			android:id="@+id/patientName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"/>
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Pesel:"
+			android:id="@+id/patientPeselText"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/patientNameText"	
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_toLeftOf="@+id/patientPesel"
+			android:textStyle="bold"/>
+		<TextView
+			android:layout_margin="5dp"
+			local:MvxBind="Text ChosenOne.Pesel"
+			android:id="@+id/patientPesel"
+			android:layout_below="@id/patientNameText"	
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"/>
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Data urodzenia:"
+			android:id="@+id/patientBirthText"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/patientPeselText"	
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_toLeftOf="@+id/patientPesel" 
+			android:textStyle="bold"/>
+		<TextView
+			android:text=""
+			android:layout_margin="5dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/patientPeselText"
+			android:id="@+id/partientBirth"
+			android:layout_alignParentRight="true"
+			local:MvxBind="Text ChosenOne.DateOfBirth"/>
+		<TextView
+			android:layout_marginTop="30dp"
+			android:layout_marginBottom="5dp"
+			android:text="Lista badań pacjenta:"
+			android:id="@+id/ListText"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/patientBirthText"	
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:textStyle="bold"/>
+		<MvxListView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_below="@id/ListText"
+			local:MvxBind="ItemsSource MedicalTestList; SelectedItem SelectedTest"
+			local:MvxItemTemplate="@layout/medical_tests_list_template"/>
+
+</RelativeLayout>

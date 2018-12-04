@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PatientsList">
+        <s:complexType />
+      </s:element>
+      <s:element name="PatientsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PatientsListResult" type="tns:ArrayOfPatientToSend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPatientToSend">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PatientToSend" nillable="true" type="tns:PatientToSend" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PatientToSend">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pesel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PatientImage" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMedicalTestTypeses">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMedicalTestTypesesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMedicalTestTypesesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddMedicalTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="test" type="tns:MedicalTest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MedicalTest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PatientId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Patient" type="tns:Patient" />
+          <s:element minOccurs="1" maxOccurs="1" name="TestResoultId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TestResoult" type="tns:TestResoult" />
+          <s:element minOccurs="1" maxOccurs="1" name="MedicalTestTypes" type="tns:MedicalTestTypes" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDone" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDelete" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Patient">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pesel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PatientImage" type="tns:Image" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDelet" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Image" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MarshalByRefObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Tag" />
+              <s:element minOccurs="0" maxOccurs="1" name="Palette" type="tns:ColorPalette" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MarshalByRefObject" abstract="true" />
+      <s:complexType name="ColorPalette" />
+      <s:complexType name="TestResoult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MedicalTestId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MedicalTest" type="tns:MedicalTest" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Doctor" type="tns:Doctor" />
+          <s:element minOccurs="0" maxOccurs="1" name="TestDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IspPositive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Doctor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Specialization" type="tns:SpecializationList" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SpecializationList">
+        <s:restriction base="s:string">
+          <s:enumeration value="Ophthalmologist" />
+          <s:enumeration value="Radiologist" />
+          <s:enumeration value="Neurologist" />
+          <s:enumeration value="Pathologist" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MedicalTestTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="BloodTest" />
+          <s:enumeration value="OphthalmologicalExamination" />
+          <s:enumeration value="NeurologicalResearch" />
+          <s:enumeration value="Usg" />
+          <s:enumeration value="Rtg" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AddMedicalTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMedicalTestResult" type="tns:MedicalTest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTestResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:TestResoult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTestResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddTestResultResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PatientSoftDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PatientSoftDeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPatient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPatientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPatientResult" type="tns:PatientToSend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PatientMedicalTests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="patientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMedicalTest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MedicalTest" nillable="true" type="tns:MedicalTest" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PatientMedicalTestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PatientMedicalTestsResult" type="tns:ArrayOfMedicalTest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllMedicalTests">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllMedicalTestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllMedicalTestsResult" type="tns:ArrayOfMedicalTest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NextMedicalTests">
+        <s:complexType />
+      </s:element>
+      <s:element name="NextMedicalTestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NextMedicalTestsResult" type="tns:ArrayOfMedicalTest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestResoult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestResoultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestResoultResult" type="tns:TestResoult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoctorsList">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="ArrayOfDoctor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Doctor" nillable="true" type="tns:Doctor" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DoctorsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoctorsListResult" type="tns:ArrayOfDoctor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="doctorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorResult" type="tns:Doctor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveChanges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="medicalTest" type="tns:MedicalTest" />
+            <s:element minOccurs="0" maxOccurs="1" name="testResoult" type="tns:TestResoult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveChangesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMedicalTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMedicalTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMedicalTestResult" type="tns:MedicalTest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PatientsListSoapIn">
+    <wsdl:part name="parameters" element="tns:PatientsList" />
+  </wsdl:message>
+  <wsdl:message name="PatientsListSoapOut">
+    <wsdl:part name="parameters" element="tns:PatientsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicalTestTypesesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMedicalTestTypeses" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicalTestTypesesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMedicalTestTypesesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMedicalTestSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMedicalTest" />
+  </wsdl:message>
+  <wsdl:message name="AddMedicalTestSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMedicalTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTestResultSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTestResult" />
+  </wsdl:message>
+  <wsdl:message name="AddTestResultSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="PatientSoftDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:PatientSoftDelete" />
+  </wsdl:message>
+  <wsdl:message name="PatientSoftDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:PatientSoftDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPatient" />
+  </wsdl:message>
+  <wsdl:message name="GetPatientSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="PatientMedicalTestsSoapIn">
+    <wsdl:part name="parameters" element="tns:PatientMedicalTests" />
+  </wsdl:message>
+  <wsdl:message name="PatientMedicalTestsSoapOut">
+    <wsdl:part name="parameters" element="tns:PatientMedicalTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllMedicalTestsSoapIn">
+    <wsdl:part name="parameters" element="tns:AllMedicalTests" />
+  </wsdl:message>
+  <wsdl:message name="AllMedicalTestsSoapOut">
+    <wsdl:part name="parameters" element="tns:AllMedicalTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="NextMedicalTestsSoapIn">
+    <wsdl:part name="parameters" element="tns:NextMedicalTests" />
+  </wsdl:message>
+  <wsdl:message name="NextMedicalTestsSoapOut">
+    <wsdl:part name="parameters" element="tns:NextMedicalTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestResoultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestResoult" />
+  </wsdl:message>
+  <wsdl:message name="GetTestResoultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestResoultResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoctorsListSoapIn">
+    <wsdl:part name="parameters" element="tns:DoctorsList" />
+  </wsdl:message>
+  <wsdl:message name="DoctorsListSoapOut">
+    <wsdl:part name="parameters" element="tns:DoctorsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctor" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveChangesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveChanges" />
+  </wsdl:message>
+  <wsdl:message name="SaveChangesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveChangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicalTestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMedicalTest" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicalTestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMedicalTestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MedicalWebServiceSoap">
+    <wsdl:operation name="PatientsList">
+      <wsdl:input message="tns:PatientsListSoapIn" />
+      <wsdl:output message="tns:PatientsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicalTestTypeses">
+      <wsdl:input message="tns:GetMedicalTestTypesesSoapIn" />
+      <wsdl:output message="tns:GetMedicalTestTypesesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMedicalTest">
+      <wsdl:input message="tns:AddMedicalTestSoapIn" />
+      <wsdl:output message="tns:AddMedicalTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTestResult">
+      <wsdl:input message="tns:AddTestResultSoapIn" />
+      <wsdl:output message="tns:AddTestResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientSoftDelete">
+      <wsdl:input message="tns:PatientSoftDeleteSoapIn" />
+      <wsdl:output message="tns:PatientSoftDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatient">
+      <wsdl:input message="tns:GetPatientSoapIn" />
+      <wsdl:output message="tns:GetPatientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientMedicalTests">
+      <wsdl:input message="tns:PatientMedicalTestsSoapIn" />
+      <wsdl:output message="tns:PatientMedicalTestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllMedicalTests">
+      <wsdl:input message="tns:AllMedicalTestsSoapIn" />
+      <wsdl:output message="tns:AllMedicalTestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NextMedicalTests">
+      <wsdl:input message="tns:NextMedicalTestsSoapIn" />
+      <wsdl:output message="tns:NextMedicalTestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestResoult">
+      <wsdl:input message="tns:GetTestResoultSoapIn" />
+      <wsdl:output message="tns:GetTestResoultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoctorsList">
+      <wsdl:input message="tns:DoctorsListSoapIn" />
+      <wsdl:output message="tns:DoctorsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctor">
+      <wsdl:input message="tns:GetDoctorSoapIn" />
+      <wsdl:output message="tns:GetDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChanges">
+      <wsdl:input message="tns:SaveChangesSoapIn" />
+      <wsdl:output message="tns:SaveChangesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicalTest">
+      <wsdl:input message="tns:GetMedicalTestSoapIn" />
+      <wsdl:output message="tns:GetMedicalTestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MedicalWebServiceSoap" type="tns:MedicalWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PatientsList">
+      <soap:operation soapAction="http://tempuri.org/PatientsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicalTestTypeses">
+      <soap:operation soapAction="http://tempuri.org/GetMedicalTestTypeses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMedicalTest">
+      <soap:operation soapAction="http://tempuri.org/AddMedicalTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTestResult">
+      <soap:operation soapAction="http://tempuri.org/AddTestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PatientSoftDelete">
+      <soap:operation soapAction="http://tempuri.org/PatientSoftDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatient">
+      <soap:operation soapAction="http://tempuri.org/GetPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PatientMedicalTests">
+      <soap:operation soapAction="http://tempuri.org/PatientMedicalTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllMedicalTests">
+      <soap:operation soapAction="http://tempuri.org/AllMedicalTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NextMedicalTests">
+      <soap:operation soapAction="http://tempuri.org/NextMedicalTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestResoult">
+      <soap:operation soapAction="http://tempuri.org/GetTestResoult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoctorsList">
+      <soap:operation soapAction="http://tempuri.org/DoctorsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctor">
+      <soap:operation soapAction="http://tempuri.org/GetDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChanges">
+      <soap:operation soapAction="http://tempuri.org/SaveChanges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicalTest">
+      <soap:operation soapAction="http://tempuri.org/GetMedicalTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MedicalWebServiceSoap12" type="tns:MedicalWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PatientsList">
+      <soap12:operation soapAction="http://tempuri.org/PatientsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicalTestTypeses">
+      <soap12:operation soapAction="http://tempuri.org/GetMedicalTestTypeses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMedicalTest">
+      <soap12:operation soapAction="http://tempuri.org/AddMedicalTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTestResult">
+      <soap12:operation soapAction="http://tempuri.org/AddTestResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PatientSoftDelete">
+      <soap12:operation soapAction="http://tempuri.org/PatientSoftDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatient">
+      <soap12:operation soapAction="http://tempuri.org/GetPatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PatientMedicalTests">
+      <soap12:operation soapAction="http://tempuri.org/PatientMedicalTests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllMedicalTests">
+      <soap12:operation soapAction="http://tempuri.org/AllMedicalTests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NextMedicalTests">
+      <soap12:operation soapAction="http://tempuri.org/NextMedicalTests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestResoult">
+      <soap12:operation soapAction="http://tempuri.org/GetTestResoult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoctorsList">
+      <soap12:operation soapAction="http://tempuri.org/DoctorsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctor">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChanges">
+      <soap12:operation soapAction="http://tempuri.org/SaveChanges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicalTest">
+      <soap12:operation soapAction="http://tempuri.org/GetMedicalTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MedicalWebService">
+    <wsdl:port name="MedicalWebServiceSoap" binding="tns:MedicalWebServiceSoap">
+      <soap:address location="http://localhost:59231/MedicalWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MedicalWebServiceSoap12" binding="tns:MedicalWebServiceSoap12">
+      <soap12:address location="http://localhost:59231/MedicalWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
