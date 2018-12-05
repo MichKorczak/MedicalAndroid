@@ -36,5 +36,22 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_alignParentRight="true"/>
+		<TextView
+			android:layout_margin="5dp"
+			android:text="Czy badanie zostało wykonane:"
+			android:id="@+id/IsDoneText"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/MedicalDateText"	
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:layout_toLeftOf="@+id/IsDone"/>
+		<TextView
+			android:layout_margin="5dp"
+			local:MvxBind="Text IsDone"
+			android:id="@+id/IsDone"
+			android:layout_below="@id/MedicalDateText"	
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"/>
 
 </RelativeLayout>

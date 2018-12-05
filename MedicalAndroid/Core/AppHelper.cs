@@ -20,5 +20,6 @@ namespace MedicalAndroid.Core
 
         public Patient Patient { get; set; }
         public MedicalTest MedicalTest { get; set; }
+        public TestResoult TestResoult { get; set; }
     }
 }

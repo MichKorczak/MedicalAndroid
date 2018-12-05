@@ -2,6 +2,7 @@
 using MedicalAndroid.Core;
 using MedicalAndroid.Models;
 using MedicalAndroid.Services;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
 namespace MedicalAndroid.ViewModel
@@ -10,11 +11,14 @@ namespace MedicalAndroid.ViewModel
     {
         public MvxObservableCollection<MedicalTest> MedicalTestList { get; set; }
         public Patient ChosenOne { get { return AppHelper.GetInstance.Patient; } }
-        public MedicalTest SelectedTest { get { return AppHelper.GetInstance.MedicalTest; } set { AppHelper.GetInstance.MedicalTest = value; } }
-        private GetClass instanceGetClass;
+        public MedicalTest SelectedTest { get { return AppHelper.GetInstance.MedicalTest; } set { AppHelper.GetInstance.MedicalTest = value; GetMedicalResoultView(); } }
 
-        public PatientDetailsViewModel()
-        { 
+        private GetClass instanceGetClass;
+        private readonly IMvxNavigationService navigationService;
+
+        public PatientDetailsViewModel(IMvxNavigationService navigationService)
+        {
+            this.navigationService = navigationService;
             instanceGetClass = new GetClass();
             MedicalTestList = new MvxObservableCollection<MedicalTest>();
             InitCommand();
@@ -31,7 +35,11 @@ namespace MedicalAndroid.ViewModel
                 Console.WriteLine(e);
                 throw;
             }
-            
+        }
+
+        private void GetMedicalResoultView()
+        {
+            navigationService.Navigate<TestResoultViewModel>();
         }
     }
 }

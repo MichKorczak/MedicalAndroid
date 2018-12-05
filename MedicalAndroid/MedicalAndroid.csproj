@@ -64,20 +64,25 @@
   <ItemGroup>
     <Compile Include="Core\App.cs" />
     <Compile Include="Core\AppHelper.cs" />
+    <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Enums\MedicalTestTypes.cs" />
+    <Compile Include="Models\Enums\SpecializationList.cs" />
     <Compile Include="Models\MedicalTest.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\TestResoult.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Services\GetClass.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="ViewModel\PatientDetailsViewModel.cs" />
     <Compile Include="ViewModel\PatientsListViewModel.cs" />
+    <Compile Include="ViewModel\TestResoultViewModel.cs" />
     <Compile Include="View\PatientDetailsView.cs" />
     <Compile Include="View\StartActivityView.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\StartActivityViewModel.cs" />
     <Compile Include="View\PatientsListView.cs" />
+    <Compile Include="View\TestResoultView.cs" />
     <Compile Include="Web References\MedicalWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +193,14 @@
     <AndroidResource Include="Resources\layout\Medical_Tests_List_Template.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\TestResoultView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\LodingImage.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
