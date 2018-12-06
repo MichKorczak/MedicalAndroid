@@ -2,6 +2,7 @@
 using MedicalAndroid.Core;
 using MedicalAndroid.Models;
 using MedicalAndroid.Services;
+using MedicalAndroid.View;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 

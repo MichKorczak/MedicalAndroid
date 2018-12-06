@@ -2372,14 +2372,17 @@ namespace MedicalAndroid
 			// aapt resource value: 0x7f080035
 			public const int CTRL = 2131230773;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int DoctorListButton = 2131230911;
+			// aapt resource value: 0x7f0800c1
+			public const int DoctorListButton = 2131230913;
 			
-			// aapt resource value: 0x7f0800cb
-			public const int DoctorName = 2131230923;
+			// aapt resource value: 0x7f0800cd
+			public const int DoctorName = 2131230925;
 			
-			// aapt resource value: 0x7f0800ca
-			public const int DoctorNameText = 2131230922;
+			// aapt resource value: 0x7f0800cc
+			public const int DoctorNameText = 2131230924;
+			
+			// aapt resource value: 0x7f0800bc
+			public const int EditPatientButton = 2131230908;
 			
 			// aapt resource value: 0x7f080036
 			public const int FUNCTION = 2131230774;
@@ -2402,11 +2405,14 @@ namespace MedicalAndroid
 			// aapt resource value: 0x7f08009d
 			public const int MedicalDateText = 2131230877;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int MedicalTestButton = 2131230909;
+			// aapt resource value: 0x7f0800bb
+			public const int MedicalResoultsListView = 2131230907;
 			
-			// aapt resource value: 0x7f0800c0
-			public const int MedicalTestTypeText = 2131230912;
+			// aapt resource value: 0x7f0800bf
+			public const int MedicalTestButton = 2131230911;
+			
+			// aapt resource value: 0x7f0800c2
+			public const int MedicalTestTypeText = 2131230914;
 			
 			// aapt resource value: 0x7f08009c
 			public const int MedicalTestTypes = 2131230876;
@@ -2420,17 +2426,17 @@ namespace MedicalAndroid
 			// aapt resource value: 0x7f08001e
 			public const int MvxBindingTagUnique = 2131230750;
 			
+			// aapt resource value: 0x7f0800c0
+			public const int NextMedicalTestButton = 2131230912;
+			
 			// aapt resource value: 0x7f0800be
-			public const int NextMedicalTestButton = 2131230910;
+			public const int PatientListButton = 2131230910;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int PatientListButton = 2131230908;
+			// aapt resource value: 0x7f0800c9
+			public const int Result = 2131230921;
 			
-			// aapt resource value: 0x7f0800c7
-			public const int Result = 2131230919;
-			
-			// aapt resource value: 0x7f0800c6
-			public const int ResultText = 2131230918;
+			// aapt resource value: 0x7f0800c8
+			public const int ResultText = 2131230920;
 			
 			// aapt resource value: 0x7f080038
 			public const int SHIFT = 2131230776;
@@ -2438,14 +2444,14 @@ namespace MedicalAndroid
 			// aapt resource value: 0x7f080039
 			public const int SYM = 2131230777;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int StartImage = 2131230907;
+			// aapt resource value: 0x7f0800bd
+			public const int StartImage = 2131230909;
 			
-			// aapt resource value: 0x7f0800c9
-			public const int TestDescription = 2131230921;
+			// aapt resource value: 0x7f0800cb
+			public const int TestDescription = 2131230923;
 			
-			// aapt resource value: 0x7f0800c8
-			public const int TestDescriptionText = 2131230920;
+			// aapt resource value: 0x7f0800ca
+			public const int TestDescriptionText = 2131230922;
 			
 			// aapt resource value: 0x7f0800a5
 			public const int action0 = 2131230885;
@@ -2666,11 +2672,11 @@ namespace MedicalAndroid
 			// aapt resource value: 0x7f0800af
 			public const int info = 2131230895;
 			
-			// aapt resource value: 0x7f0800c5
-			public const int isPositive = 2131230917;
+			// aapt resource value: 0x7f0800c7
+			public const int isPositive = 2131230919;
 			
-			// aapt resource value: 0x7f0800c4
-			public const int isPositiveText = 2131230916;
+			// aapt resource value: 0x7f0800c6
+			public const int isPositiveText = 2131230918;
 			
 			// aapt resource value: 0x7f08005b
 			public const int italic = 2131230811;
@@ -2696,17 +2702,17 @@ namespace MedicalAndroid
 			// aapt resource value: 0x7f080063
 			public const int list_item = 2131230819;
 			
-			// aapt resource value: 0x7f0800ce
-			public const int masked = 2131230926;
+			// aapt resource value: 0x7f0800d0
+			public const int masked = 2131230928;
 			
 			// aapt resource value: 0x7f0800a8
 			public const int media_actions = 2131230888;
 			
-			// aapt resource value: 0x7f0800c1
-			public const int medicalTestType = 2131230913;
+			// aapt resource value: 0x7f0800c3
+			public const int medicalTestType = 2131230915;
 			
-			// aapt resource value: 0x7f0800cc
-			public const int message = 2131230924;
+			// aapt resource value: 0x7f0800ce
+			public const int message = 2131230926;
 			
 			// aapt resource value: 0x7f080033
 			public const int middle = 2131230771;
@@ -2903,11 +2909,11 @@ namespace MedicalAndroid
 			// aapt resource value: 0x7f080019
 			public const int tag_transition_group = 2131230745;
 			
-			// aapt resource value: 0x7f0800c3
-			public const int testDate = 2131230915;
+			// aapt resource value: 0x7f0800c5
+			public const int testDate = 2131230917;
 			
-			// aapt resource value: 0x7f0800c2
-			public const int testDateText = 2131230914;
+			// aapt resource value: 0x7f0800c4
+			public const int testDateText = 2131230916;
 			
 			// aapt resource value: 0x7f08001a
 			public const int text = 2131230746;
@@ -2978,8 +2984,8 @@ namespace MedicalAndroid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800cd
-			public const int visible = 2131230925;
+			// aapt resource value: 0x7f0800cf
+			public const int visible = 2131230927;
 			
 			// aapt resource value: 0x7f08003e
 			public const int withText = 2131230782;
@@ -3164,85 +3170,88 @@ namespace MedicalAndroid
 			public const int design_text_input_password_icon = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int Medical_Tests_List_Template = 2130968616;
+			public const int EditPatientView = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int notification_action = 2130968617;
+			public const int Medical_Tests_List_Template = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int notification_action_tombstone = 2130968618;
+			public const int notification_action = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int notification_media_action = 2130968619;
+			public const int notification_action_tombstone = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int notification_media_cancel_action = 2130968620;
+			public const int notification_media_action = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int notification_template_big_media = 2130968621;
+			public const int notification_media_cancel_action = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int notification_template_big_media_custom = 2130968622;
+			public const int notification_template_big_media = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int notification_template_big_media_narrow = 2130968623;
+			public const int notification_template_big_media_custom = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int notification_template_big_media_narrow_custom = 2130968624;
+			public const int notification_template_big_media_narrow = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int notification_template_custom_big = 2130968625;
+			public const int notification_template_big_media_narrow_custom = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int notification_template_icon_group = 2130968626;
+			public const int notification_template_custom_big = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_template_lines_media = 2130968627;
+			public const int notification_template_icon_group = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_template_media = 2130968628;
+			public const int notification_template_lines_media = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_template_media_custom = 2130968629;
+			public const int notification_template_media = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_template_part_chronometer = 2130968630;
+			public const int notification_template_media_custom = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_part_time = 2130968631;
+			public const int notification_template_part_chronometer = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int PatientDetailsView = 2130968632;
+			public const int notification_template_part_time = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int Patients_List_Template = 2130968633;
+			public const int PatientDetailsView = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int PatientsListView = 2130968634;
+			public const int Patients_List_Template = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int select_dialog_item_material = 2130968635;
+			public const int PatientsListView = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int select_dialog_multichoice_material = 2130968636;
+			public const int select_dialog_item_material = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int select_dialog_singlechoice_material = 2130968637;
+			public const int select_dialog_multichoice_material = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int SplashScreen = 2130968638;
+			public const int select_dialog_singlechoice_material = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int StartActivityView = 2130968639;
+			public const int SplashScreen = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int support_simple_spinner_dropdown_item = 2130968640;
+			public const int StartActivityView = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int TestResoultView = 2130968641;
+			public const int support_simple_spinner_dropdown_item = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int tooltip = 2130968642;
+			public const int TestResoultView = 2130968642;
+			
+			// aapt resource value: 0x7f040043
+			public const int tooltip = 2130968643;
 			
 			static Layout()
 			{

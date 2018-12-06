@@ -68,10 +68,17 @@
 			android:layout_centerInParent="true"
 			android:textStyle="bold"/>
 		<MvxListView
+			android:id="@+id/MedicalResoultsListView"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_below="@id/ListText"
 			local:MvxBind="ItemsSource MedicalTestList; SelectedItem SelectedTest"
-			local:MvxItemTemplate="@layout/medical_tests_list_template"/>
-
+			local:MvxItemTemplate="@layout/medical_tests_list_template"
+			android:layout_marginBottom="48dp"/>
+		<Button
+			android:text="Edycja"
+			android:id="@+id/EditPatientButton"
+			android:layout_alignParentBottom="true"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
 </RelativeLayout>

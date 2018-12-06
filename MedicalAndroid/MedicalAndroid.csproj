@@ -72,6 +72,7 @@
     <Compile Include="Models\TestResoult.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Services\GetClass.cs" />
+    <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="ViewModel\PatientDetailsViewModel.cs" />
     <Compile Include="ViewModel\PatientsListViewModel.cs" />
@@ -143,7 +144,13 @@
     <PackageReference Include="MvvmCross">
       <Version>6.2.2</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross.Droid.Support.Fragment">
+      <Version>6.2.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.Fragment">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -201,6 +208,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\LodingImage.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EditPatientView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

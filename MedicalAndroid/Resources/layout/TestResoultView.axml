@@ -6,7 +6,6 @@
     android:layout_height="match_parent">
 	  <TextView
 		android:layout_margin="5dp"
-		android:text="Imię i nazwisko:"
 		android:id="@+id/patientNameText"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -15,14 +14,12 @@
 		android:textStyle="bold"/>
 	  <TextView
 		android:layout_margin="5dp"
-		local:MvxBind="Text Patient.Name"
 		android:id="@+id/patientName"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentRight="true"/>
 	  <TextView
 		android:layout_margin="5dp"
-		android:text="Rodzaj badania:"
 		android:id="@+id/MedicalTestTypeText"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/patientNameText"	
@@ -32,7 +29,6 @@
 		android:textStyle="bold"/>
 	  <TextView
 		android:layout_margin="5dp"
-		local:MvxBind="Text MedicalTest.MedicalTestTypes"
 		android:id="@+id/medicalTestType"
 		android:layout_below="@id/patientNameText"	
 		android:layout_width="wrap_content"
@@ -40,7 +36,6 @@
 		android:layout_alignParentRight="true"/>
 	  <TextView
 		android:layout_margin="5dp"
-		android:text="Data badania:"
 		android:id="@+id/testDateText"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/MedicalTestTypeText"	
@@ -49,17 +44,14 @@
 		android:layout_toLeftOf="@+id/testDate" 
 		android:textStyle="bold"/>
 	  <TextView
-		android:text=""
 		android:layout_margin="5dp"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_below="@id/MedicalTestTypeText"
 		android:id="@+id/testDate"
-		android:layout_alignParentRight="true"
-		local:MvxBind="Text MedicalTest.DateTime"/>
+		android:layout_alignParentRight="true" />
 	  <TextView
 		android:layout_margin="5dp"
-		android:text="Wynik badania:"
 		android:id="@+id/isPositiveText"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/testDateText"	
@@ -68,17 +60,14 @@
 		android:layout_toLeftOf="@+id/isPositive" 
 		android:textStyle="bold"/>
 	  <TextView
-		android:text=""
 		android:layout_margin="5dp"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_below="@id/testDateText"
 		android:id="@+id/isPositive"
-		android:layout_alignParentRight="true"
-		local:MvxBind="Text TestResoult.IspPositive"/>
+		android:layout_alignParentRight="true" />
 	  <TextView
 		android:layout_margin="5dp"
-		android:text="Rezultat:"
 		android:id="@+id/ResultText"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/isPositiveText"	
@@ -87,26 +76,21 @@
 		android:layout_toLeftOf="@+id/Result" 
 		android:textStyle="bold"/>
 	  <TextView
-		android:text=""
 		android:layout_margin="5dp"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_below="@id/isPositiveText"
 		android:id="@+id/Result"
-		android:layout_alignParentRight="true"
-		local:MvxBind="Text TestResoult.Result"/>
+		android:layout_alignParentRight="true" />
 	  <TextView
 		android:layout_margin="5dp"
-		android:text="Opis:"
 		android:id="@+id/TestDescriptionText"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/ResultText"	
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
-		
 		android:textStyle="bold"/>
 	<TextView
-		android:text=""
 		android:layout_margin="5dp"
 		android:layout_width="230.5dp"
 		android:layout_height="wrap_content"
@@ -114,12 +98,10 @@
 		android:id="@+id/TestDescription"
 		android:layout_toRightOf="@+id/TestDescriptionText"
 		android:gravity="right"
-		android:layout_alignParentRight="true"
-		local:MvxBind="Text TestResoult.TestDescription"/>
+		android:layout_alignParentRight="true"/>
 	  <TextView
 		android:layout_marginLeft="5dp"
 	    android:layout_marginTop="30dp"
-		android:text="Doktor prowadzący:"
 		android:id="@+id/DoctorNameText"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/TestDescriptionText"	
@@ -128,14 +110,12 @@
 		android:layout_toLeftOf="@+id/DoctorName" 
 		android:textStyle="bold"/>
 	  <TextView
-		android:text=""
 		android:layout_marginRight="5dp"
 		android:layout_marginTop="30dp"
 		android:layout_width="wrap_content"
 		android:layout_height="fill_parent"
 		android:layout_below="@id/TestDescriptionText"
 		android:id="@+id/DoctorName"
-		android:layout_alignParentRight="true"
-		local:MvxBind="Text Doctor.Name"/>
+		android:layout_alignParentRight="true" />
 	  
 </RelativeLayout>
