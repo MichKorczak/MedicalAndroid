@@ -4,7 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+	<Button
+		android:id="@+id/AddPatient"
+		android:text="Dodaj pacjęta"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_gravity="top"
+		local:MvxBind="Click AddPatiet"/>
 	<MvxListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

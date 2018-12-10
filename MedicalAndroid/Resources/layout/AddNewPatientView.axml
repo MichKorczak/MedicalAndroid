@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:layout_margin="5dp"
+		android:text="Imię i nazwisko:"
+		android:id="@+id/patientNameText"
+		android:textSize="20dp"
+		android:textColor="@android:color/black"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_toLeftOf="@+id/newPatientName"
+		android:textStyle="bold"/>
+
+	<EditText
+		android:layout_margin="5dp"
+		local:MvxBind="Text NewOne.Name"
+		android:id="@+id/newPatientName"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"/>
+
+	<TextView
+		android:layout_margin="5dp"
+		android:text="Pesel:"
+		android:id="@+id/patientNameText"
+		android:textSize="20dp"
+		android:textColor="@android:color/black"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_toLeftOf="@+id/newPatientName"
+		android:textStyle="bold"/>
+
+	<EditText
+		android:layout_margin="5dp"
+		local:MvxBind="Text NewOne.Pesel"
+		android:id="@+id/newPatientName"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"/>
+
+	<Button
+		android:id="@+id/saveButton"
+		android:text="Zapisz"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom"
+		local:MvxBind="Click SaveButton"/>
+</LinearLayout>

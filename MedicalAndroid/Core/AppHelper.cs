@@ -1,4 +1,5 @@
-﻿using MedicalAndroid.Models;
+﻿using Android.Content;
+using MedicalAndroid.Models;
 
 namespace MedicalAndroid.Core
 {
@@ -22,5 +23,6 @@ namespace MedicalAndroid.Core
         public Patient EditPatient { get; set; }
         public MedicalTest MedicalTest { get; set; }
         public TestResoult TestResoult { get; set; }
+        public Context AppContext { get; set; }
     }
 }

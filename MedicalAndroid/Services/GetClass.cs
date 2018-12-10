@@ -152,5 +152,11 @@ namespace MedicalAndroid.Services
             Patients.Remove(Patients.FirstOrDefault(x => x.Id == patient.Id));
             Patients.Add(patient);
         }
+
+        public void AddPatient(Patient patient)
+        {
+            patient.Id = Patients.Count + 1;
+            Patients.Add(patient);
+        }
     }
 }

@@ -3,6 +3,7 @@ using MedicalAndroid.Core;
 using MedicalAndroid.Models;
 using MedicalAndroid.Services;
 using MedicalAndroid.View;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
@@ -13,6 +14,9 @@ namespace MedicalAndroid.ViewModel
         private readonly IMvxNavigationService mvxNavigationService;
         public MvxObservableCollection<Patient> PatientsList { get; set; }
         public Patient SelectedPatient { get { return AppHelper.GetInstance.Patient; } set { AppHelper.GetInstance.Patient = value; GoToPatientPage(); } }
+
+        private IMvxCommand addPatiet;
+        public IMvxCommand AddPatiet => addPatiet ?? (addPatiet = new MvxCommand(GoToAddNewPatient));
 
         private GetClass instance;
 
@@ -40,7 +44,11 @@ namespace MedicalAndroid.ViewModel
                 Console.WriteLine(e);
                 throw;
             }
-           
+        }
+
+        private void GoToAddNewPatient()
+        {
+            mvxNavigationService.Navigate<AddNewPatientViewModel>();
         }
     }
 }
