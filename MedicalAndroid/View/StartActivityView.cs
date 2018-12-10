@@ -17,7 +17,5 @@ namespace MedicalAndroid.View
 
             SetContentView(Resource.Layout.StartActivityView);
         }
-
-        
     }
 }

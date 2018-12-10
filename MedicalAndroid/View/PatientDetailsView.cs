@@ -1,11 +1,7 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.OS;
 using Android.Widget;
-using MedicalAndroid.ViewModel;
 using MvvmCross.Droid.Support.V4;
-using MvvmCross.Platforms.Android.Binding.Views;
-using MvvmCross.Platforms.Android.Views;
 
 namespace MedicalAndroid.View
 {
@@ -26,7 +22,6 @@ namespace MedicalAndroid.View
                 TestResoultView resoultView = new TestResoultView();
                 
                 resoultView.Show(SupportFragmentManager, "");
-
             };
         }
     }

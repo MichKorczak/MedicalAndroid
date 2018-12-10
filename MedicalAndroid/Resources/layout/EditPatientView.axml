@@ -1,7 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-</LinearLayout>
+	<TextView
+		android:layout_margin="5dp"
+		android:textSize="20dp"
+		android:text="Imię i nazwisko:"
+		android:gravity="center"
+		android:id="@+id/patientNameText"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_toLeftOf="@+id/editPatientName"
+		android:textStyle="bold"/>
+	<EditText
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="500px"
+		android:minHeight="25px"
+		android:layout_alignParentRight="true"
+		local:MvxBind="Text ChangedModel.Name"
+		android:id="@+id/editPatientName" />
+	<TextView
+		android:layout_marginTop="10dp"
+		android:textSize="20dp"
+		android:text="Pesel:"
+		android:gravity="center"
+		android:id="@+id/patientPeselText"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_toLeftOf="@+id/editPatientPesel"
+		android:textStyle="bold"
+		android:layout_below="@id/editPatientName"/>
+	<EditText
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="500px"
+		android:minHeight="25px"
+		android:layout_alignParentRight="true"
+		android:id="@+id/editPatientPesel" 
+		local:MvxBind="Text ChangedModel.Pesel"
+		android:layout_below="@id/editPatientName"/>
+	<TextView
+		android:textSize="20dp"
+		android:text="Data urodzenia:"
+		android:layout_margin = "5dp"
+		android:id="@+id/patientBirthDateText"
+		android:layout_toLeftOf="@+id/patientBirthDate"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:textStyle="bold"
+		android:layout_below="@id/editPatientPesel"/>
+	<TextView
+		android:id="@+id/patientBirthDate"
+		local:MvxBind="Text DateText"
+		android:textSize="18dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/editPatientPesel"
+		android:layout_alignParentRight="true"
+		android:layout_margin="5dp"/>	
+	<Button
+		android:id="@+id/changedDateButton"
+		android:text="Zmień datę"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/patientBirthDate"
+		android:layout_alignParentRight="true"
+		android:layout_marginTop="5dp"
+		android:layout_marginRight="5dp"/>
+	<Button
+		android:id="@+id/saveButton"
+		android:text="Zapisz"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		local:MvxBind="Click SaveCommand"/>
+</RelativeLayout>

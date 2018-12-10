@@ -3,6 +3,7 @@
 using MedicalAndroid.Core;
 using MedicalAndroid.Models;
 using MedicalAndroid.Services;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
@@ -13,6 +14,13 @@ namespace MedicalAndroid.ViewModel
         public MvxObservableCollection<MedicalTest> MedicalTestList { get; set; }
         public Patient ChosenOne { get { return AppHelper.GetInstance.Patient; } }
         public MedicalTest SelectedTest { get { return AppHelper.GetInstance.MedicalTest; } set { AppHelper.GetInstance.MedicalTest = value; } }
+        public string PatientBirthday { get; set; }
+
+        private IMvxCommand editCommand;
+        public IMvxCommand EditCommand => editCommand ?? (editCommand = new MvxCommand(GoToEditView));
+
+        private IMvxCommand listViewCommand;
+        public IMvxCommand ListViewCommand => listViewCommand ?? (listViewCommand = new MvxCommand(GoToPatientListView));
 
         private GetClass instanceGetClass;
         private readonly IMvxNavigationService navigationService;
@@ -22,6 +30,7 @@ namespace MedicalAndroid.ViewModel
             this.navigationService = navigationService;
             instanceGetClass = new GetClass();
             MedicalTestList = new MvxObservableCollection<MedicalTest>();
+            PatientBirthday = ChosenOne.DateOfBirth.ToShortDateString();
             InitCommand();
         }
 
@@ -37,6 +46,10 @@ namespace MedicalAndroid.ViewModel
                 throw;
             }
         }
+
+        private void GoToEditView() => navigationService.Navigate<EditPatientViewModel>();
+
+        private void GoToPatientListView() => navigationService.Navigate<PatientsListViewModel>();
 
         private void GetMedicalResoultView()
         {

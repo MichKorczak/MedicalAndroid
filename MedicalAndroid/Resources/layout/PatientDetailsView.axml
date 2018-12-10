@@ -4,6 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+		<Button
+			android:text="Cofnij"
+			android:id="@+id/BackViewButton"
+			android:layout_alignParentTop="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			local:MvxBind="Click ListViewCommand"/>
 		<TextView
 			android:layout_margin="5dp"
 			android:text="Imię i nazwisko:"
@@ -12,14 +19,16 @@
 			android:layout_height="wrap_content"
 			android:layout_alignParentLeft="true"
 			android:layout_toLeftOf="@+id/patientName"
-			android:textStyle="bold"/>
+			android:textStyle="bold"
+			android:layout_below="@id/BackViewButton"/>
 		<TextView
 			android:layout_margin="5dp"
 			local:MvxBind="Text ChosenOne.Name"
 			android:id="@+id/patientName"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_alignParentRight="true"/>
+			android:layout_alignParentRight="true"
+			android:layout_below="@id/BackViewButton"/>
 		<TextView
 			android:layout_margin="5dp"
 			android:text="Pesel:"
@@ -56,7 +65,7 @@
 			android:layout_below="@id/patientPeselText"
 			android:id="@+id/partientBirth"
 			android:layout_alignParentRight="true"
-			local:MvxBind="Text ChosenOne.DateOfBirth"/>
+			local:MvxBind="Text PatientBirthday"/>
 		<TextView
 			android:layout_marginTop="30dp"
 			android:layout_marginBottom="5dp"
@@ -80,5 +89,6 @@
 			android:id="@+id/EditPatientButton"
 			android:layout_alignParentBottom="true"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content" />
+			android:layout_height="wrap_content" 
+			local:MvxBind="Click EditCommand"/>
 </RelativeLayout>

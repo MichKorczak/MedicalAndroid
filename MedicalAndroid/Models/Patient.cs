@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Android.Media;
 using MedicalAndroid.Annotations;
@@ -29,8 +30,8 @@ namespace MedicalAndroid.Models
             }
         }
 
-        private string dateOfBirth;
-        public string DateOfBirth
+        private DateTime dateOfBirth;
+        public DateTime DateOfBirth
         {
             get { return dateOfBirth; }
             set

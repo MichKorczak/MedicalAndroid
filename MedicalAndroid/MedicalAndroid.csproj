@@ -74,9 +74,12 @@
     <Compile Include="Services\GetClass.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="ViewModel\EditPatientViewModel.cs" />
     <Compile Include="ViewModel\PatientDetailsViewModel.cs" />
     <Compile Include="ViewModel\PatientsListViewModel.cs" />
     <Compile Include="ViewModel\TestResoultViewModel.cs" />
+    <Compile Include="View\ChangeDateFragment.cs" />
+    <Compile Include="View\EditPatientView.cs" />
     <Compile Include="View\PatientDetailsView.cs" />
     <Compile Include="View\StartActivityView.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -211,6 +214,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\EditPatientView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ChangeDateFragment.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

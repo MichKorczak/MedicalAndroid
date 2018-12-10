@@ -13,15 +13,15 @@ namespace MedicalAndroid.Services
 
         private static List<Patient> Patients = new List<Patient>
         {
-            new Patient {Id = 1, Name = "Tomek Wójcik", DateOfBirth = "01.09.1989", Pesel = "01098975243"},
-            new Patient {Id = 2, Name = "Andrzej Nowak", DateOfBirth = "01.09.1989", Pesel = "01098975243"},
-            new Patient {Id = 3, Name = "Zbyszek Wodzirej", DateOfBirth = "01.09.1989", Pesel = "01098975243"},
-            new Patient {Id = 4, Name = "Patryk Myszka", DateOfBirth = "01.09.1989", Pesel = "01098975243"},
-            new Patient {Id = 5, Name = "Grzegorz Słowikowski", DateOfBirth = "01.09.1989", Pesel = "01098975243"},
-            new Patient {Id = 6, Name = "Małgorzata Gżegzółka", DateOfBirth = "01.09.1989", Pesel = "01098975243"},
-            new Patient {Id = 7, Name = "Kasia Małosolna", DateOfBirth = "01.09.1989", Pesel = "01098975243"},
-            new Patient {Id = 8, Name = "Ełgienia Krawczyk", DateOfBirth = "01.09.1989", Pesel = "01098975243"},
-            new Patient {Id = 9, Name = "Barbara Wójcikowska", DateOfBirth = "01.09.1989", Pesel = "01098975243"}
+            new Patient {Id = 1, Name = "Tomek Wójcik", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"},
+            new Patient {Id = 2, Name = "Andrzej Nowak", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"},
+            new Patient {Id = 3, Name = "Zbyszek Wodzirej", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"},
+            new Patient {Id = 4, Name = "Patryk Myszka", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"},
+            new Patient {Id = 5, Name = "Grzegorz Słowikowski", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"},
+            new Patient {Id = 6, Name = "Małgorzata Gżegzółka", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"},
+            new Patient {Id = 7, Name = "Kasia Małosolna", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"},
+            new Patient {Id = 8, Name = "Ełgienia Krawczyk", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"},
+            new Patient {Id = 9, Name = "Barbara Wójcikowska", DateOfBirth = new DateTime(1989, 11, 9), Pesel = "01098975243"}
         };
 
         private static List<MedicalTest> MedicalTests = new List<MedicalTest>
@@ -96,7 +96,7 @@ namespace MedicalAndroid.Services
         public MvxObservableCollection<Patient> GetPatientList()
         {
             MvxObservableCollection<Patient> patientsList = new MvxObservableCollection<Patient>();
-
+            
             //try
             //{
             //    var value = service.PatientsList();
@@ -119,9 +119,9 @@ namespace MedicalAndroid.Services
 
             //return patientsList;
 
-            
+            var sortedPatient = Patients.OrderBy(x => x.Name);
 
-            foreach (var patient in Patients)
+            foreach (var patient in sortedPatient)
             {
                 patientsList.Add(patient);
             }
@@ -146,5 +146,11 @@ namespace MedicalAndroid.Services
         public TestResoult GetTestResoult(int medicalTestId) => TestResoults.FirstOrDefault(x => x.MedicalTestId == medicalTestId);
 
         public Doctor GetDoctor(int id) => Doctors.FirstOrDefault(x => x.Id == id);
+
+        public void EditPatient(Patient patient)
+        {
+            Patients.Remove(Patients.FirstOrDefault(x => x.Id == patient.Id));
+            Patients.Add(patient);
+        }
     }
 }
