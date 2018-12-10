@@ -12,9 +12,10 @@ namespace MedicalAndroid.ViewModel
         public Patient ChangedModel
         {
             get { return AppHelper.GetInstance.EditPatient; }
+            set { AppHelper.GetInstance.EditPatient = value; }
         }
 
-        public string DateText { get { return AppHelper.GetInstance.EditPatient.DateOfBirth.ToShortDateString(); } }
+        // public string DateText { get { return ChangedModel.DateOfBirth.ToShortDateString(); } }
         private IMvxNavigationService navigate;
 
         private IMvxCommand saveCommand;
@@ -26,7 +27,16 @@ namespace MedicalAndroid.ViewModel
         {
             this.navigate = navigate;
             instance = new GetClass();
-            AppHelper.GetInstance.EditPatient = AppHelper.GetInstance.Patient;
+            InitCommand();
+        }
+
+        private void InitCommand()
+        {
+            ChangedModel = new Patient();
+            ChangedModel.Id = AppHelper.GetInstance.Patient.Id;
+            ChangedModel.Name = AppHelper.GetInstance.Patient.Name;
+            ChangedModel.DateOfBirth = AppHelper.GetInstance.Patient.DateOfBirth;
+            ChangedModel.Pesel = AppHelper.GetInstance.Patient.Pesel;
         }
 
         public void SaveChanges()
