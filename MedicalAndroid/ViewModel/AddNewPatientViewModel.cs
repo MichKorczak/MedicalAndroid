@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Xml.Serialization;
-using Android.App;
-using Android.Content;
 using Android.Widget;
 using MedicalAndroid.Core;
 using MedicalAndroid.Models;
@@ -93,7 +90,7 @@ namespace MedicalAndroid.ViewModel
                 service.Navigate<PatientsListViewModel>();
             }
 
-            catch (Exception e)
+            catch (Exception)
             {
                 if (AppHelper.GetInstance.AppContext != null)
                 {

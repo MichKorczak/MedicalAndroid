@@ -9,7 +9,7 @@ namespace MedicalAndroid.Services
 {
     public class GetClass
     {
-        private MedicalWebService.MedicalWebService service;
+        private readonly MedicalWebService.MedicalWebService service;
 
         private static List<Patient> Patients = new List<Patient>
         {
